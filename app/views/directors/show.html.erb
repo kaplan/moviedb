@@ -1,13 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag @director.photo_url %>
 <p>
   <b>Name:</b>
   <%= @director.name %>
 </p>
 
+<ul>
+<% @movies.each do |movie| %>
+  <li><%= link_to movie.title, movie %></li>
+<% end %>
+</ul>
+
 <p>
-  <b>Dob:</b>
-  <%= @director.dob %>
+  <b>Date of Birth:</b>
+  <%= @director.dob.to_s %> <br>
+  <%= @director.dob.inspect %>
 </p>
 
 

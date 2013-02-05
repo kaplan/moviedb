@@ -6,8 +6,12 @@
 </p>
 
 <p>
+  <%= image_tag @movie.movie_poster%>
+</p>
+
+<p>
   <b>Director:</b>
-  <%= @movie.director_id %>
+  <%= link_to @movie_director.name, @movie_director %>
 </p>
 
 <p>

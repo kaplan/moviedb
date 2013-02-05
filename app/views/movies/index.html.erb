@@ -1,6 +1,5 @@
 <h1>Listing movies</h1>
 
-<%# @directors %>
 
 <table>
   <tr>
@@ -15,14 +14,12 @@
 <% @movies.each do |movie| %>
   <tr>
     <td><%= movie.title %></td>
-    <td><%# movie.director_id %></td>
-
-    <% @directors.each do |director| %>
+    <td><% @directors.each do |director| %>
       <% if movie.director_id == director.id %>
-        <td><%= director.name %></td>
+        <%= link_to director.name, director %>
       <% end %>
     <% end %>
-
+  </td>
 
     <td><%= movie.year %></td>
     <td><%= link_to 'Show', movie %></td>
